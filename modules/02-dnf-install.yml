@@ -1,6 +1,6 @@
 name: dnf-install
 type: shell
 commands:
-  - dnf check-update
+  - dnf check-update -y
   - dnf install code git gh nano -y
 
