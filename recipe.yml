@@ -11,29 +11,29 @@ stages:
   - name: rustup
     type: shell
     commands:
-    - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y 
-    - . "$HOME/.cargo/env" 
+      - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y 
+      - . "$HOME/.cargo/env" 
 
   - name: vs-code
     type: shell
     commands:
-    - rpm --import https://packages.microsoft.com/keys/microsoft.asc
-    - echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+      - rpm --import https://packages.microsoft.com/keys/microsoft.asc
+      - echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
   
   - name: dnf-install
     type: shell
-    - dnf check-update
-    - dnf install code git gh nano -y
+      - dnf check-update
+      - dnf install code git gh nano -y
 
   - name: git-config
     type: shell
     commands:
-    - git config --global user.email stoorps@proton.me 
-    - git config --global user.name stoorps 
-    - git config --global gpg.format ssh 
-    - git config --global user.signingkey /var/home/stoorps/.ssh/github.pub
-    - git config --global commit.gpgsign true
-    - git config --global tag.gpgSign true
+      - git config --global user.email stoorps@proton.me 
+      - git config --global user.name stoorps 
+      - git config --global gpg.format ssh 
+      - git config --global user.signingkey /var/home/stoorps/.ssh/github.pub
+      - git config --global commit.gpgsign true
+      - git config --global tag.gpgSign true
 
   - name: zed
     type: shell
