@@ -1,0 +1,5 @@
+name: zed
+type: shell
+commands:
+  - curl -f https://zed.dev/install.sh | sh
+

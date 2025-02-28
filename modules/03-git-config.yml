@@ -1,0 +1,10 @@
+name: git-config
+type: shell
+commands:
+  - git config --global user.email stoorps@proton.me 
+  - git config --global user.name stoorps 
+  - git config --global gpg.format ssh 
+  - git config --global user.signingkey /var/home/stoorps/.ssh/github.pub
+  - git config --global commit.gpgsign true
+  - git config --global tag.gpgSign true
+
